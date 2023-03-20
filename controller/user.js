@@ -29,7 +29,7 @@ export const userLogin = async (req, res) => {
 };
 
 export const register = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, fullname, gender } = req.body;
 
     const response = {
         message: "Register customer failed.",

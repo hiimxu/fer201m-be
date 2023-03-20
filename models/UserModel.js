@@ -13,6 +13,7 @@ const schema = new mongoose.Schema(
         fullname: {
             type: String,
             require: true,
+            default: "Customer",
         },
         roll: {
             type: String,
