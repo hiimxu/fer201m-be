@@ -1,32 +1,26 @@
 import mongoose from "mongoose";
-import { TypeMovieModel } from "./TypeMovieModel.js";
 
 const schema = new mongoose.Schema(
   {
-    imageurl: {
-      type: String,
-      require: true,
-      default: "",
-    },
-    title: {
+    userid: {
       type: String,
       require: true,
     },
-    release: {
-      type: Number,
+    comment: {
+      type: String,
+      require: true,
+    },
+    movieid: {
+      type: String,
       require: true,
     },
     rate: {
       type: Number,
       require: true,
-      default: 0,
-    },
-    type: {
-      type: Object,
-      require: true,
+      default: 10,
     },
   },
   { timestamps: true }
 );
 
-export const MovieModel = mongoose.model("Movie", schema);
+export const CommentModel = mongoose.model("Comments", schema);
