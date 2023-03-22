@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { TypeMovieModel } from "./TypeMovieModel.js";
 
 const schema = new mongoose.Schema(
   {
@@ -24,6 +23,11 @@ const schema = new mongoose.Schema(
     type: {
       type: Object,
       require: true,
+    },
+    description: {
+      type: String,
+      require: true,
+      default: "",
     },
   },
   { timestamps: true }
