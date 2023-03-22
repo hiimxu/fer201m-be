@@ -8,6 +8,7 @@ import posts from "./routers/posts.js";
 import auth from "./routers/auth.js";
 import typeMovie from "./routers/typeMovie.js";
 import movies from "./routers/movies.js";
+import comments from "./routers/comment.js";
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use(cors());
 app.use("/auth", auth);
 app.use("/typeMovie", typeMovie);
 app.use("/movies", movies);
+app.use("/comment", comments);
 
 mongoose
   .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
