@@ -6,6 +6,7 @@ export const getListCommentByMovie = async (req, res) => {
   const { movieId } = req.params;
   try {
     const listComment = await CommentModel.find({ movieid: movieId });
+
     res.status(200).json({
       message: "Get list comment of movie successful.",
       data: listComment,
@@ -34,8 +35,10 @@ export const getCommentByCustomer = async (req, res) => {
 
 export const createComment = async (req, res) => {
   const { userId, movieId, comment, rate } = req.body;
+  const user = await UserModel.findById(userId);
   const userComment = {
     userid: userId,
+    user: user.fullname,
     movieid: movieId,
     comment: comment,
     rate: rate,

@@ -6,6 +6,10 @@ const schema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    user: {
+      type: String,
+      require: true,
+    },
     comment: {
       type: String,
       require: true,
